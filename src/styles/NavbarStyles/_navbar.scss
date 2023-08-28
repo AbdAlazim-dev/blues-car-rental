@@ -1,0 +1,118 @@
+@use "../global/" as *;
+
+//q: how can i remove the scroll when the navbar is active?
+
+.mobile-navbar {
+  display: flex;
+  position: fixed;
+  z-index: 1000;
+  transition: all 0.3s ease-in-out;
+  left: -100%;
+  height: 100%;
+  width: 100%;
+  transition: all 0.3s ease-in-out;
+  &__links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    color: $text-dBlue;
+    flex-direction: column;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+    svg {
+      position: absolute;
+      top: 2rem;
+      left: 2rem;
+      cursor: pointer;
+      width: 40px;
+      height: 40px;
+    }
+    li {
+      padding: 1rem;
+      font-weight: 600;
+      font-size: $h3-size;
+    }
+  }
+}
+.navbar-active {
+  left: 0;
+}
+.mobile-device-icon {
+  display: none;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  //show the mobile navbar icon when links hide
+  @media (max-width: 950px) {
+    display: flex;
+  }
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2.7rem 2rem;
+  position: absolute;
+  width: 100%;
+  right: 0;
+  left: 0;
+  top: 0;
+  height: auto;
+  z-index: 100;
+  max-width: 133rem;
+  margin: 0 auto;
+  .logo {
+    width: 100%;
+  }
+  &__links {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 2rem;
+    flex: 2;
+    a.active {
+      &::after {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 2px;
+        background-color: $text-dBlue;
+        bottom: -3px;
+        left: 0;
+      }
+    }
+    a {
+      font-size: 1.8rem;
+      font-weight: 600;
+      color: $text-dBlue;
+      transition: all 0.3s ease-in-out;
+      position: relative;
+      &::before {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 2px;
+        bottom: -3px;
+        left: 0;
+        background-color: $text-dBlue;
+        visibility: hidden;
+        transform: scaleX(0);
+        transition: all 0.3s ease-in-out;
+      }
+      &:hover {
+        &::before {
+          visibility: visible;
+          transform: scaleX(1);
+        }
+        color: $text-black;
+      }
+    }
+    @media (max-width: 950px) {
+      display: none;
+    }
+  }
+}

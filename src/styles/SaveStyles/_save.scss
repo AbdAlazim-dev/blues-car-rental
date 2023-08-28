@@ -1,0 +1,53 @@
+@use "../global/" as *;
+
+#save {
+  height: 30vh;
+  width: 100%;
+  background-image: url("../images/SaveImages/background-save.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  color: white;
+  overflow: hidden;
+  position: relative;
+  h2 {
+    z-index: 3;
+    font-size: $h1-size;
+    font-weight: 800;
+    @media (max-width: 850px) {
+      font-size: $h2-size;
+    }
+    @media (max-width: 550px) {
+      font-size: 2.5rem;
+    }
+  }
+  h5 {
+    z-index: 3;
+    font-size: $h3-size;
+    font-weight: 500;
+    margin-top: 1rem;
+    @media (max-width: 850px) {
+      font-size: $p-size;
+    }
+    @media (max-width: 550px) {
+      font-size: 1.5rem;
+    }
+
+    span {
+      color: #7993e0;
+    }
+  }
+  &::before {
+    width: 100%;
+    height: 100%;
+    content: "";
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.707);
+    left: 0;
+    top: 0;
+  }
+}

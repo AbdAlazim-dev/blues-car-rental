@@ -1,0 +1,43 @@
+@use "../global/" as *;
+
+.Testimonials-slider {
+  background-color: #102c57;
+  padding: 5rem 0;
+  margin-bottom: 10rem;
+}
+.testimonials-slider-content {
+  display: flex;
+  width: 100%;
+  .carousel {
+    cursor: grab;
+    overflow: hidden;
+    padding: 2rem 0;
+  }
+  .carousel-inner {
+    display: flex;
+    width: 100%;
+  }
+  .item {
+    min-height: 30rem;
+    min-width: 40rem;
+    padding: 40px;
+  }
+}
+.testi-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  color: white;
+  font-family: $text-font;
+  h2 {
+    font-size: $h2-size;
+    font-weight: 700;
+  }
+  p {
+    font-size: $p-size;
+    font-weight: 500;
+    color: #eee;
+    text-align: center;
+  }
+}

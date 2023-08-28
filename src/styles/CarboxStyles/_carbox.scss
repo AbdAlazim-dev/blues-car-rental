@@ -1,0 +1,108 @@
+@use "../global/" as *;
+.selectedCar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 60vh;
+  position: relative;
+  @media (max-width: 950px) {
+    flex-direction: column;
+  }
+  img {
+    display: block;
+    width: 600px;
+    margin-left: 10rem;
+    @media (max-width: 1300px) {
+      margin-left: 3rem;
+    }
+    @media (max-width: 950px) {
+      margin: 8rem 0;
+    }
+    @media (max-width: 750px) {
+      width: 500px;
+    }
+    @media (max-width: 550px) {
+      width: 350px;
+    }
+    @media (max-width: 400px) {
+      width: 300px;
+    }
+  }
+}
+.car-details {
+  display: flex;
+  flex-direction: column;
+  min-width: 25rem;
+  height: fit-content;
+  border: none;
+
+  &__header {
+    background-color: $text-dBlue;
+    color: white;
+    padding: 1rem 5rem;
+    text-align: center;
+    h5 {
+      font-size: 2.5rem;
+      font-weight: 600;
+      font-family: $text-font;
+      span {
+        font-size: 1.2rem;
+        font-weight: 400;
+      }
+    }
+  }
+  .book-now {
+    background-color: $text-dBlue;
+    font-size: $h4-size;
+    padding: 1rem 2rem;
+    color: $bg-white;
+    font-weight: 500;
+    font-family: $text-font;
+    border: none;
+    box-shadow: 5px 5px 0px rgba(0, 0, 0, 0.164);
+    margin-top: 2rem;
+    &:hover {
+      background-color: #164791;
+    }
+  }
+  &__rest {
+    border: 1px solid black;
+
+    display: flex;
+    flex-direction: column;
+
+    &__box {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      padding: 4px;
+      :first-child {
+        border-left: 1px solid black;
+      }
+      span {
+        display: flex;
+        justify-content: center;
+        font-size: 1.4rem;
+        font-weight: 600;
+        font-family: $text-font;
+        align-items: center;
+        margin: 10px 0;
+      }
+    }
+  }
+}
+.loading {
+  position: absolute;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: conic-gradient(#0000 10%, $text-dBlue);
+  -webkit-mask: radial-gradient(farthest-side, #0000 calc(100% - 9px), #000 0);
+  animation: spinner 1s infinite linear;
+  top: 40%;
+  right: -150%;
+}
+@keyframes spinner {
+  to {
+    transform: rotate(1turn);
+  }
+}

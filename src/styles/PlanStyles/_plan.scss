@@ -1,0 +1,59 @@
+@use "../global/" as *;
+
+#plan {
+  background-color: $bg-white;
+  padding-top: 10rem;
+}
+.plan-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+
+  color: $text-black;
+
+  h2 {
+    font-size: $h2-size;
+    margin-top: 2rem;
+  }
+  h4 {
+    font-size: $h4-size;
+  }
+}
+.plan-content {
+  padding: 5rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(30%, 1fr));
+  gap: 2rem;
+  justify-content: center;
+  align-items: center;
+  @media (max-width: 850px) {
+    grid-template-columns: repeat(auto-fill, minmax(40%, 1fr));
+  }
+  @media (max-width: 650px) {
+    grid-template-columns: 1fr;
+  }
+  &__box {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    padding: 0 0.8rem;
+    font-family: $text-font;
+    min-height: 50rem;
+    @media (max-width: 850px) {
+      min-height: 30rem;
+    }
+    h4 {
+      font-size: 2rem;
+    }
+    p {
+      color: $text-gray;
+      font-size: 1.8rem;
+    }
+    img {
+      width: 200px;
+    }
+  }
+}

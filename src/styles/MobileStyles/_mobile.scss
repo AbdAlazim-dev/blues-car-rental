@@ -1,0 +1,44 @@
+@use "../global/" as *;
+
+#mobile-app {
+  background-image: url("../images/MobileImages/app-pic.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 0 -150px;
+  @media (max-width: 850px) {
+    background-image: none;
+  }
+}
+
+.mobile-app-content {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  min-height: 60vh;
+  max-width: 60%;
+  @media (max-width: 850px) {
+    max-width: 100%;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+  }
+  h2 {
+    padding: 0 2rem;
+    font-size: $h2-size;
+    font-weight: 700;
+    color: $text-dBlue;
+    margin-bottom: 2rem;
+  }
+  p {
+    font-size: $p-size;
+    font-family: $text-font;
+    font-weight: 400;
+    color: $text-gray;
+    margin-bottom: 2rem;
+  }
+  img {
+    cursor: pointer;
+    width: 200px;
+  }
+}

@@ -1,0 +1,68 @@
+@use "../global/" as *;
+
+#pick-car {
+  background-color: $bg-white;
+  padding: 10rem 0;
+  height: fit-content;
+}
+.pick-car-content {
+  &__header {
+    text-align: center;
+    margin-bottom: 4rem;
+    h4 {
+      font-size: 2rem;
+      font-weight: 600;
+    }
+    h2 {
+      font-size: $h2-size;
+      margin: 0.9rem 0;
+    }
+    p {
+      font-size: 1.8rem;
+      font-family: $text-font;
+      color: $text-gray;
+    }
+  }
+  &__car-info {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+    @media (max-width: 1150px) {
+      flex-direction: column;
+    }
+    &__carbtns {
+      display: flex;
+      flex-direction: column;
+      @media (max-width: 1150px) {
+        margin-top: 8rem;
+      }
+
+      button {
+        font-size: 2.6rem;
+        border: none;
+        outline: none;
+        background-color: $bg-gray;
+        color: black;
+        padding: 1.5rem 3rem;
+        margin-bottom: 1.2rem;
+        font-weight: 600;
+        font-family: $text-font;
+        transition: all 0.3s ease-in-out;
+        display: flex;
+        justify-content: center;
+        @media (max-width: 1150px) {
+          width: 300px;
+        }
+        &:hover {
+          background-color: $text-dBlue;
+          color: $bg-white;
+        }
+      }
+      .coloredBtn {
+        background-color: $text-dBlue;
+        color: $bg-white;
+      }
+    }
+  }
+}

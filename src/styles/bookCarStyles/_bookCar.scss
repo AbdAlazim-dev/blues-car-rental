@@ -1,0 +1,325 @@
+@use "../global/" as *;
+
+.bookCar {
+  width: 100%;
+  background-color: $bg-gray;
+  position: relative;
+}
+.bookCar-content {
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 5rem;
+  position: relative;
+  z-index: 5;
+  width: 95%;
+  box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.248);
+  background-color: white;
+  margin-top: 2rem;
+  padding: 4rem;
+  border-radius: 0.4rem;
+  min-height: 35rem;
+  h3 {
+    font-size: $h4-size;
+    color: $text-black;
+    font-weight: 900;
+    margin-bottom: 1.5rem;
+  }
+}
+.pickUp-form {
+  display: grid;
+  width: 100%;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: auto auto;
+  gap: 2rem;
+  @media (max-width: 750px) {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto auto;
+  }
+  @media (max-width: 550px) {
+    grid-template-columns: 1fr;
+  }
+}
+.quistion {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  label {
+    font-size: 1.4rem;
+    font-family: $text-font;
+    font-weight: 600;
+    padding-bottom: 1rem;
+  }
+  select {
+    appearance: none;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    border-bottom: 1px solid $text-dBlue;
+    padding: 0.5rem 0;
+    font-size: 1.4rem;
+    font-family: $text-font;
+    font-weight: 600;
+    color: $text-gray;
+    cursor: pointer;
+    option {
+      margin-right: 1rem;
+    }
+  }
+  input[type="date"] {
+    appearance: none;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    border-bottom: 1px solid $text-dBlue;
+    padding: 0.5rem 0;
+    font-size: 1.4rem;
+    font-family: $text-font;
+    font-weight: 600;
+    color: $text-gray;
+    cursor: pointer;
+  }
+}
+.submit-btn {
+  padding: 1rem 2rem;
+  border-radius: 0.1rem;
+  font-size: 2rem;
+  font-weight: 500;
+  cursor: pointer;
+  height: fit-content;
+  background-color: $text-dBlue;
+  color: $bg-white;
+  border: none;
+  outline: none;
+  transition: all 0.3s ease-in-out;
+  margin-top: 3.5rem;
+  &:hover {
+    box-shadow: #102c5746 0 10px 15px 0;
+  }
+}
+.error-message {
+  padding: 1rem 2rem;
+  border-radius: 0.5rem;
+  background-color: rgba(255, 0, 0, 0.335);
+  color: rgb(176, 0, 0);
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin: 1rem 0;
+  font-family: $text-font;
+  display: flex;
+  justify-content: space-between;
+  svg {
+    cursor: pointer;
+    height: 20px;
+    width: 20px;
+  }
+}
+.done-message {
+  padding: 1rem 2rem;
+  border-radius: 0.5rem;
+  background-color: rgba(0, 255, 115, 0.335);
+  color: rgb(65, 176, 0);
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin: 1rem 0;
+  font-family: $text-font;
+  display: none;
+  justify-content: space-between;
+  svg {
+    cursor: pointer;
+    height: 20px;
+    width: 20px;
+  }
+}
+//last step of booking
+.booking-last {
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  width: 80rem;
+  max-height: 100vh;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  top: 55%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 30;
+  background-color: white;
+  border: 5px solid rgb(255, 255, 255);
+  @media (max-width: 850px) {
+    width: 100%;
+  }
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 1rem 0.5rem;
+    font-size: 2rem;
+    background-color: $text-dBlue;
+    color: white;
+    font-weight: 400;
+    font-family: $text-font;
+    svg {
+      width: 30px;
+      height: 100%;
+      cursor: pointer;
+    }
+  }
+  &__subheading {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin: 1rem 0;
+    background-color: #325589;
+    margin-top: -3px;
+    padding: 1rem 0.5rem;
+    color: white;
+    font-family: $text-font;
+    ul {
+      color: rgb(185, 185, 185);
+    }
+    h3 {
+      display: flex;
+      align-items: center;
+      svg {
+        margin-left: 1rem;
+      }
+    }
+  }
+  &__car-info {
+    display: flex;
+    padding: 1rem;
+    @media (max-width: 850px) {
+      display: grid;
+    }
+    h5 {
+      font-size: 1.2rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+      font-family: $text-font;
+    }
+    &__dates {
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+      div {
+        display: flex;
+        margin-bottom: 2rem;
+        svg {
+          width: 15px;
+          height: auto;
+          color: $text-dBlue;
+        }
+        span {
+          font-weight: 600;
+          margin-right: 1rem;
+        }
+        h6 {
+          font-size: 1rem;
+          font-weight: 600;
+          font-family: $text-font;
+        }
+      }
+    }
+    &__model {
+      display: flex;
+      flex-direction: column;
+      flex: 2;
+      img {
+        width: 100%;
+        height: auto;
+      }
+    }
+  }
+  &__customer-info {
+    display: flex;
+    .personal-info {
+      display: flex;
+      flex-direction: column;
+      padding: 1rem;
+      width: 100%;
+      &__col2 {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;
+        margin-bottom: 1rem;
+        @media (max-width: 750px) {
+          grid-template-columns: 1fr;
+        }
+      }
+      &__col1 {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 1rem;
+        margin-bottom: 1rem;
+      }
+      span {
+        display: flex;
+        flex-direction: column;
+      }
+      label {
+        position: relative;
+        width: fit-content;
+        font-family: 1.4rem;
+        font-family: $text-font;
+      }
+      label::after {
+        content: "*";
+        color: red;
+        position: absolute;
+        top: 0;
+        left: -1.5rem;
+        font-size: 1.4rem;
+      }
+      input[type="text"] {
+        padding: 0.6rem;
+        border-radius: 0.2rem;
+        border: 1px solid $text-dBlue;
+        outline: none;
+        font-size: 1.1rem;
+        font-weight: 600;
+        color: $text-gray;
+        margin-top: 0.5rem;
+      }
+      .email-sub {
+        flex-direction: row;
+        gap: 1rem;
+        justify-content: space-between;
+        margin-bottom: 5rem;
+        div {
+          display: flex;
+          align-items: flex-end;
+          gap: 1.2rem;
+        }
+        input[type="checkbox"] {
+          width: 15px;
+          height: 15px;
+        }
+        input[type="submit"] {
+          padding: 1rem 2rem;
+          border-radius: 0.2rem;
+          outline: none;
+          border: none;
+          font-size: 1.5rem;
+          font-weight: 600;
+          background-color: $text-dBlue;
+          color: white;
+          cursor: pointer;
+          width: 150px;
+        }
+      }
+    }
+  }
+}
+.hide {
+  display: none;
+}
+.overley::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 20;
+}

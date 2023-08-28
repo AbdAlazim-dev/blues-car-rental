@@ -1,0 +1,70 @@
+@use "../global/" as *;
+
+#testimonials {
+  background-color: $text-dBlue;
+  width: 100%;
+  padding: 10rem 0;
+}
+.test-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  @media (max-width: 850px) {
+    flex-direction: column;
+  }
+}
+.test-header {
+  min-width: 300px;
+  @media (max-width: 850px) {
+    margin-bottom: 5rem;
+  }
+  h1 {
+    font-size: $h2-size;
+    color: white;
+    font-family: $text-font;
+    font-weight: 700;
+  }
+}
+.testimonials-flex {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  @media (max-width: 700px) {
+    flex-direction: column;
+  }
+  &__box {
+    background-color: white;
+    padding: 1rem;
+    border-radius: 0.8rem;
+    min-height: 20rem;
+    position: relative;
+    min-width: 20rem;
+    @media (max-width: 700px) {
+      flex-direction: column;
+      margin-top: 4rem;
+    }
+    img {
+      position: absolute;
+      width: 90px;
+      border-radius: 50%;
+      border: 4px solid $text-dBlue;
+      top: -45px;
+    }
+    p {
+      font-size: $p-size;
+      font-family: $text-font;
+      font-weight: 400;
+      color: $text-gray;
+      margin-top: 4rem;
+      margin-bottom: 3rem;
+    }
+    h5 {
+      font-size: 2rem;
+    }
+    h6 {
+      color: $text-dBlue;
+      font-size: 1.2rem;
+      font-family: $text-font;
+    }
+  }
+}

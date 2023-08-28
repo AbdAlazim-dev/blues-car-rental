@@ -1,0 +1,27 @@
+@use "../global/" as *;
+
+.pages-hero {
+  height: 50vh;
+
+  display: flex;
+  z-index: 20;
+  align-items: flex-start;
+  justify-content: center;
+  flex-direction: column;
+  background-image: url("../images/HeroImages/Bg-image.png");
+  background-size: 560px;
+  background-repeat: no-repeat;
+  * {
+    z-index: 2;
+    margin-right: 4rem;
+    font-family: $text-font;
+  }
+  h1 {
+    font-size: $h2-size;
+    font-weight: 600;
+  }
+  h4 {
+    font-size: $h4-size;
+    font-weight: 500;
+  }
+}

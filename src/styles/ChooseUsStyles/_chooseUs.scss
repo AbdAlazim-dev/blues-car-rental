@@ -1,0 +1,93 @@
+@use "../global/" as *;
+
+#choose-us {
+  background-color: white;
+  padding-top: 5rem;
+  padding-bottom: 10rem;
+  position: relative;
+  overflow: hidden;
+  background-image: url("../images/ChooseImages/wheel.png");
+  background-position: -225px 255px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  z-index: -1;
+}
+.choose-content {
+  display: flex;
+  flex-direction: column;
+  &__cars-images {
+    width: 100%;
+    position: relative;
+    z-index: 5;
+  }
+}
+
+.features {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 3rem;
+  width: 100%;
+
+  @media (max-width: 1050px) {
+    flex-direction: column;
+    align-items: center;
+  }
+  &__box {
+    color: #010103;
+    display: flex;
+    flex-direction: column;
+    max-width: 50rem;
+
+    @media (max-width: 1050px) {
+      text-align: center;
+      margin-bottom: 6rem;
+    }
+    h4 {
+      font-size: $h4-size;
+      margin-bottom: 1rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+    }
+    h2 {
+      font-size: $h2-size;
+      margin-bottom: 2rem;
+      font-weight: 700;
+    }
+    p {
+      font-size: $p-size;
+      color: $text-gray;
+      font-family: $text-font;
+    }
+  }
+  &__box2 {
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    max-width: 60rem;
+    &__box {
+      display: flex;
+      margin: 1rem;
+      @media (max-width: 650px) {
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+      }
+
+      img {
+        width: 100px;
+        height: 100px;
+      }
+      .feature-text {
+        h4 {
+          font-size: 2rem;
+          margin: 1.5rem 0;
+        }
+        p {
+          font-size: $p-size;
+          font-family: $text-font;
+          color: $text-gray;
+        }
+      }
+    }
+  }
+}

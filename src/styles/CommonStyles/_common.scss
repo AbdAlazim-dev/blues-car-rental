@@ -1,0 +1,74 @@
+@use "../global/" as *;
+
+#common-quis {
+  background-color: $bg-white;
+  width: 100%;
+  padding: 10rem 0;
+  background-image: url("../images/CoomonImages/kia2.png");
+  background-repeat: no-repeat;
+  background-position: -225px 255px;
+  min-height: 85vh;
+}
+.common-content {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  &__header {
+    h2 {
+      font-size: $h2-size;
+      color: $text-dBlue;
+      font-weight: 700;
+      text-align: center;
+    }
+    p {
+      font-size: $p-size;
+      font-family: $text-font;
+      font-weight: 400;
+      color: $text-gray;
+      margin-top: 2rem;
+      text-align: center;
+    }
+  }
+  &__quistions {
+    z-index: 2;
+    position: relative;
+    background-color: white;
+    margin-top: 5rem;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
+    border-radius: 0.8rem;
+    max-width: 70rem;
+  }
+}
+.quistion-box {
+  transition: 0.15s ease;
+  .quistion {
+    padding: 2rem;
+    font-size: $p-size;
+    font-family: $text-font;
+    font-weight: 500;
+
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
+  }
+  .answer {
+    font-size: $p-size;
+    font-family: $text-font;
+    color: $text-gray;
+    line-height: 1.7;
+    max-height: 0;
+    overflow: hidden;
+    transition: 0.4s ease;
+    padding: 0 4.5rem;
+    @media (max-width: 750px) {
+      overflow-y: scroll;
+    }
+  }
+  .active {
+    max-height: 20rem;
+    padding: 2.8rem 4.5rem;
+    transition: 0.4s ease;
+  }
+  .active-quistion {
+    background-color: $text-dBlue;
+    color: white;
+  }
+}
