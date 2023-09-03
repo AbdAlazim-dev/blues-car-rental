@@ -1,4 +1,4 @@
-![blues](https://github.com/AbdAlazim-dev/Blues-car-rental/assets/135723207/10206cf8-0739-4e8f-97d7-6d502594d757)
+![blues](https://github.com/AbdAlazim-dev/blues-car-rental/assets/135723207/1360ee4c-4140-4723-9664-ffc09f79e5df)
 
 # about the project
 
@@ -9,9 +9,10 @@ Blues Car Rental is a user-friendly web application that allows users to rent ca
 - Scss
 - JavaScript
 - React.Js
+[Live Demo](https://64ece5b135a6c54b62edca80--tranquil-daffodil-af1578.netlify.app/)
 
 ## Screenshots
 
 Home Page
+![website-screenshot](https://github.com/AbdAlazim-dev/blues-car-rental/assets/135723207/31326af1-8d22-4661-a6ad-4e4052781a79)
 
-![website-screenshot](https://github.com/AbdAlazim-dev/Blues-car-rental/assets/135723207/f99804c6-4245-4b02-b97a-7110423c9451)
