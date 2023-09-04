@@ -9,7 +9,7 @@ Blues Car Rental is a user-friendly web application that allows users to rent ca
 - Scss
 - JavaScript
 - React.Js
-[Live Demo](https://64ece5b135a6c54b62edca80--tranquil-daffodil-af1578.netlify.app/)
+[Live Demo](https://main--calm-crumble-79e36b.netlify.app/)
 
 ## Screenshots
 
