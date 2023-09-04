@@ -65,7 +65,8 @@
       margin-right: 1rem;
     }
   }
-  input[type="date"] {
+  .date-picker {
+    width: 100%;
     appearance: none;
     border: none;
     outline: none;

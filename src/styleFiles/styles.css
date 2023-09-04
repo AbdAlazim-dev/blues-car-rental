@@ -428,7 +428,8 @@ body {
 .quistion select option {
   margin-right: 1rem;
 }
-.quistion input[type=date] {
+.quistion .date-picker {
+  width: 100%;
   -webkit-appearance: none;
      -moz-appearance: none;
           appearance: none;

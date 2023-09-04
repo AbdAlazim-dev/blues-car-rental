@@ -1,4 +1,6 @@
 import { useEffect, useState } from "react";
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
 //icons
 import { FaRegTimesCircle } from "react-icons/fa";
 import { FaXmark } from "react-icons/fa6";
@@ -10,7 +12,6 @@ import Camry2023 from "../images/CarImgages/Camry2023.png";
 import Corola2024 from "../images/CarImgages/Corola2024.png";
 import Spark from "../images/CarImgages/Spark.jpeg";
 import Elntra from "../images/CarImgages/Elntra2024.png";
-
 import Yares2023 from "../images/CarImgages/Yares2023.jpg";
 /////////////////////////////////////////////////////////////////
 function BookCar() {
@@ -18,10 +19,10 @@ function BookCar() {
   const [carType, setCarType] = useState("");
   const [pickUp, setPickUp] = useState("");
   const [dropOff, setDropOff] = useState("");
-  const [pickUpDate, setPickUpDate] = useState("");
-  const [dropOffDate, setDropOffDate] = useState("");
   const [carImg, setCarImg] = useState("");
   const [model, setModel] = useState(false);
+  const [pickDate, setPickDate] = useState(new Date());
+  const [dropDate, setDropDate] = useState(new Date());
   //handle change for all inputs
   const handleChange = (e) => {
     const name = e.target.name;
@@ -34,9 +35,9 @@ function BookCar() {
     } else if (name === "dropOff") {
       setDropOff(value);
     } else if (name === "pickUpDate") {
-      setPickUpDate(value);
+      setPickDate(value);
     } else if (name === "dropOffDate") {
-      setDropOffDate(value);
+      setDropDate(value);
     }
   };
   //stop the document scrolling when the model is open
@@ -70,13 +71,7 @@ function BookCar() {
   //check if one of the inputs is empty and show error message
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (
-      carType === "" ||
-      pickUp === "" ||
-      dropOff === "" ||
-      pickUpDate === "" ||
-      dropOffDate === ""
-    ) {
+    if (carType === "" || pickUp === "" || dropOff === "") {
       seterrMsg(true);
     } else {
       seterrMsg(false);
@@ -85,10 +80,11 @@ function BookCar() {
   };
   const handleModel = (e) => {
     const doneMessage = document.querySelector(".done-message");
+    //close the model when user click on the close child
 
     if (e) {
       e.preventDefault();
-      if (e.target.id === "close") {
+      if (e.target.id === "close" || e.target.tagName === "path") {
         setModel(!model);
         return;
       }
@@ -229,24 +225,30 @@ function BookCar() {
                 <option value="Alain">العين</option>
               </select>
             </div>
-            <div className="quistion" value={pickUpDate}>
+            <div className="quistion" value={pickDate}>
               <label htmlFor="pickUpDate">تاريخ الإستلام</label>
-              <input
-                id="pickUpDate"
-                type="date"
+              <DatePicker
                 name="pickUpDate"
-                onChange={handleChange}
+                className="date-picker"
+                id="pickUpDate"
+                onChange={(date) => setPickDate(date)}
+                selected={pickDate}
+                minDate={new Date()}
+                dateFormat="yyyy/MM/dd"
               />
             </div>
             <div className="quistion">
-              <label htmlFor="dropOffDate" value={dropOffDate}>
+              <label htmlFor="dropOffDate" value={dropDate}>
                 تاريخ الإرجاع
               </label>
-              <input
-                id="dropOffDate"
-                type="date"
+              <DatePicker
                 name="dropOffDate"
-                onChange={handleChange}
+                className="date-picker"
+                id="pickUpDate"
+                onChange={(date) => setDropDate(date)}
+                selected={dropDate}
+                minDate={new Date()}
+                dateFormat="yyyy/MM/dd"
               />
             </div>
             <input
@@ -280,14 +282,24 @@ function BookCar() {
               <FaCalendarCheck />
               <span>
                 <h6>تاريخ الاستلام ووقت الاستلام</h6>
-                {pickUpDate} <input type="time" />
+                {pickDate.toLocaleDateString("en-US", {
+                  year: "numeric",
+                  month: "2-digit",
+                  day: "2-digit",
+                })}{" "}
+                <input type="time" />
               </span>
             </div>
             <div>
               <FaCalendarCheck />
               <span>
                 <h6>تاريخ التسليم ووقت التسليم</h6>
-                {dropOffDate} <input type="time" />
+                {dropDate.toLocaleDateString("en-US", {
+                  year: "numeric",
+                  month: "2-digit",
+                  day: "2-digit",
+                })}{" "}
+                <input type="time" />
               </span>
             </div>
             <div className="pick-up-location">
